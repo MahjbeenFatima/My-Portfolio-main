@@ -1,0 +1,125 @@
+.skills-section {
+  position: relative;
+  padding: 40px 20px; 
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.skills-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../../assets/images/skill.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  z-index: -1;
+  transform: scale(1.1);
+}
+
+.skills-overlay {
+  padding: 40px 20px; /* Adjusted padding */
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 3rem; /* Reduced for responsiveness */
+  color: #ffffff;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+  top: 10px;
+}
+
+@media (min-width: 768px) {
+  .skills-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .skills-title {
+    font-size: 5.6rem;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Smaller min width */
+  gap: 16px;
+  justify-items: center;
+}
+
+.skill-card {
+  border-radius: 32px;
+  padding: 30px 16px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 16px;
+}
+
+.skill-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.skill-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Background color variants */
+.skill-card.one {
+  background-color: #020618;
+  color: #ffffff;
+}
+.skill-card.two {
+  background-color: #ffffff;
+  color: #000000;
+}
+.skill-card.three {
+  background-color: #EC253F;
+  color: #ffffff;
+}
+.skill-card.four {
+  background-color: #1A7595;
+  color: #ffffff;
+}

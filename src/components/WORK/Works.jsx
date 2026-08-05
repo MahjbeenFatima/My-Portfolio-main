@@ -87,6 +87,101 @@ const Works = () => {
             </p>
           </div>
         </div>
+
+        <a
+          className="work-card six"
+          data-aos="fade-right"
+          data-aos-delay="500"
+          href="https://gak-website-six.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="card-image">
+            <span className="card-emoji" role="img" aria-label="School">🏫</span>
+          </div>
+          <div className="card-content">
+            <h3>APS&C GAK Campus</h3>
+            <p>
+              Built the official website for Army Public School &amp; College, GAK Campus, covering admissions, academics (FBISE &amp; Cambridge streams), notifications, and parent resources. Delivered a responsive, content-rich site with a clean, disciplined layout matching the institution's identity.
+            </p>
+          </div>
+        </a>
+
+        <a
+          className="work-card seven"
+          data-aos="zoom-in-up"
+          data-aos-delay="600"
+          href="https://cinewoo.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="card-image">
+            <span className="card-emoji" role="img" aria-label="Film">🎬</span>
+          </div>
+          <div className="card-content">
+            <h3>Cinewoo</h3>
+            <p>
+              Developed a modern, visually engaging website for Cinewoo, a platform empowering Canadian film talent. Focused on clean UI, smooth animations, and responsive layouts to showcase the brand and its mission to the film community.
+            </p>
+          </div>
+        </a>
+
+        <a
+          className="work-card eight"
+          data-aos="fade-left"
+          data-aos-delay="700"
+          href="https://meemacademy.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="card-image">
+            <span className="card-emoji" role="img" aria-label="Graduation cap">🎓</span>
+          </div>
+          <div className="card-content">
+            <h3>Meem School System</h3>
+            <p>
+              Built the website for Meem School System, a K-12 institution offering academics from preschool through senior school alongside a Hifz-ul-Qur'an program. Implemented admissions info, online courses, a student login portal, and campus gallery sections.
+            </p>
+          </div>
+        </a>
+
+        <a
+          className="work-card nine"
+          data-aos="fade-right"
+          data-aos-delay="800"
+          href="https://hihss.edu.pk/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="card-image">
+            <span className="card-emoji" role="img" aria-label="Books">📖</span>
+          </div>
+          <div className="card-content">
+            <h3>Himayat-e-Islam School</h3>
+            <p>
+              Developed the website for Himayat-e-Islam School, Lahore, a historic institution established in 1884. Structured content around academics, faculty profiles, admissions, and alumni connections with a responsive, easy-to-navigate design.
+            </p>
+          </div>
+        </a>
+
+        <a
+          className="work-card ten"
+          data-aos="zoom-in-up"
+          data-aos-delay="900"
+          href="https://mmcp.com.pk/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="card-image">
+            <span className="card-emoji" role="img" aria-label="Pharmacy">💊</span>
+          </div>
+          <div className="card-content">
+            <h3>Mian Meer College of Pharmacy</h3>
+            <p>
+              Built the website for MMCP, Jhang's first pharmacy college, showcasing its Pharm-D program, admissions process, downloadable forms, campus facilities, and institutional vision through a clean, informative layout.
+            </p>
+          </div>
+        </a>
       </div>
     </section>
   );

@@ -15,9 +15,60 @@ const Works = () => {
       </h2>
 
       <div className="works-grid">
+        <div className="work-card three" data-aos="fade-right">
+          <div className="card-image">
+            <span className="card-emoji" role="img" aria-label="Trophy">🥇</span>
+          </div>
+          <div className="card-content">
+            <h3>Gold & Silver</h3>
+            <p>
+              UI/UX design, front-end development, and QA testing for a Next.js web app. Converted Figma designs into responsive, interactive pages, built reusable components, integrated REST APIs for dynamic data, and performed functional, UI, and cross-browser testing across the user dashboard.
+            </p>
+          </div>
+        </div>
+
+        <a
+          className="work-card seven"
+          data-aos="zoom-in-up"
+          data-aos-delay="100"
+          href="https://cinewoo.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="card-image">
+            <span className="card-emoji" role="img" aria-label="Film">🎬</span>
+          </div>
+          <div className="card-content">
+            <h3>Cinewoo</h3>
+            <p>
+              Developed a modern, visually engaging website for Cinewoo, a platform empowering Canadian film talent. Focused on clean UI, smooth animations, and responsive layouts to showcase the brand and its mission to the film community.
+            </p>
+          </div>
+        </a>
+
+        <a
+          className="work-card ten"
+          data-aos="fade-left"
+          data-aos-delay="200"
+          href="https://mmcp.com.pk/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="card-image">
+            <span className="card-emoji" role="img" aria-label="Pharmacy">💊</span>
+          </div>
+          <div className="card-content">
+            <h3>Mian Meer College of Pharmacy</h3>
+            <p>
+              Built the website for MMCP, Jhang's first pharmacy college, showcasing its Pharm-D program, admissions process, downloadable forms, campus facilities, and institutional vision through a clean, informative layout.
+            </p>
+          </div>
+        </a>
+
         <a
           className="work-card one"
           data-aos="fade-right"
+          data-aos-delay="300"
           href="https://staging.ams.edu.pk/"
           target="_blank"
           rel="noopener noreferrer"
@@ -36,7 +87,7 @@ const Works = () => {
         <a
           className="work-card two"
           data-aos="zoom-in-up"
-          data-aos-delay="100"
+          data-aos-delay="400"
           href="https://bluestarschools.com.pk/"
           target="_blank"
           rel="noopener noreferrer"
@@ -52,33 +103,9 @@ const Works = () => {
           </div>
         </a>
 
-        <div className="work-card three" data-aos="fade-left" data-aos-delay="200">
-          <div className="card-image">
-            <span className="card-emoji" role="img" aria-label="Trophy">🥇</span>
-          </div>
-          <div className="card-content">
-            <h3>Gold & Silver</h3>
-            <p>
-              UI/UX design, front-end development, and QA testing for a Next.js web app. Converted Figma designs into responsive, interactive pages, built reusable components, integrated REST APIs for dynamic data, and performed functional, UI, and cross-browser testing across the user dashboard.
-            </p>
-          </div>
-        </div>
-
-        <div className="work-card four" data-aos="fade-right" data-aos-delay="300">
-          <div className="card-image">
-            <span className="card-emoji" role="img" aria-label="Live streaming">🎥</span>
-          </div>
-          <div className="card-content">
-            <h3>Live Streaming Web Application</h3>
-            <p>
-              Led the development of a dynamic live streaming web application built with Next.js. Implemented real-time video streaming functionality and integrated live chat features for user interaction, with a focus on performance optimization and overall user experience.
-            </p>
-          </div>
-        </div>
-
         <a
           className="work-card six"
-          data-aos="fade-right"
+          data-aos="fade-left"
           data-aos-delay="500"
           href="https://gak-website-six.vercel.app/"
           target="_blank"
@@ -96,28 +123,9 @@ const Works = () => {
         </a>
 
         <a
-          className="work-card seven"
-          data-aos="zoom-in-up"
-          data-aos-delay="600"
-          href="https://cinewoo.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="card-image">
-            <span className="card-emoji" role="img" aria-label="Film">🎬</span>
-          </div>
-          <div className="card-content">
-            <h3>Cinewoo</h3>
-            <p>
-              Developed a modern, visually engaging website for Cinewoo, a platform empowering Canadian film talent. Focused on clean UI, smooth animations, and responsive layouts to showcase the brand and its mission to the film community.
-            </p>
-          </div>
-        </a>
-
-        <a
           className="work-card eight"
-          data-aos="fade-left"
-          data-aos-delay="700"
+          data-aos="fade-right"
+          data-aos-delay="600"
           href="https://meemacademy.org/"
           target="_blank"
           rel="noopener noreferrer"
@@ -135,8 +143,8 @@ const Works = () => {
 
         <a
           className="work-card nine"
-          data-aos="fade-right"
-          data-aos-delay="800"
+          data-aos="zoom-in-up"
+          data-aos-delay="700"
           href="https://hihss.edu.pk/"
           target="_blank"
           rel="noopener noreferrer"
@@ -152,24 +160,17 @@ const Works = () => {
           </div>
         </a>
 
-        <a
-          className="work-card ten"
-          data-aos="zoom-in-up"
-          data-aos-delay="900"
-          href="https://mmcp.com.pk/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="work-card four" data-aos="fade-left" data-aos-delay="800">
           <div className="card-image">
-            <span className="card-emoji" role="img" aria-label="Pharmacy">💊</span>
+            <span className="card-emoji" role="img" aria-label="Live streaming">🎥</span>
           </div>
           <div className="card-content">
-            <h3>Mian Meer College of Pharmacy</h3>
+            <h3>Live Streaming Web Application</h3>
             <p>
-              Built the website for MMCP, Jhang's first pharmacy college, showcasing its Pharm-D program, admissions process, downloadable forms, campus facilities, and institutional vision through a clean, informative layout.
+              Led the development of a dynamic live streaming web application built with Next.js. Implemented real-time video streaming functionality and integrated live chat features for user interaction, with a focus on performance optimization and overall user experience.
             </p>
           </div>
-        </a>
+        </div>
       </div>
     </section>
   );

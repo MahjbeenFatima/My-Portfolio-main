@@ -15,7 +15,13 @@ const Works = () => {
       </h2>
 
       <div className="works-grid">
-        <div className="work-card three" data-aos="fade-right">
+        <a
+          className="work-card three"
+          data-aos="fade-right"
+          href="https://goldandsilverdr.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="card-image">
             <span className="card-emoji" role="img" aria-label="Trophy">🥇</span>
           </div>
@@ -25,7 +31,7 @@ const Works = () => {
               UI/UX design, front-end development, and QA testing for a Next.js web app. Converted Figma designs into responsive, interactive pages, built reusable components, integrated REST APIs for dynamic data, and performed functional, UI, and cross-browser testing across the user dashboard.
             </p>
           </div>
-        </div>
+        </a>
 
         <a
           className="work-card seven"

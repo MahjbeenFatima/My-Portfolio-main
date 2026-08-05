@@ -76,18 +76,6 @@ const Works = () => {
           </div>
         </div>
 
-        <div className="work-card five" data-aos="zoom-in-up" data-aos-delay="400">
-          <div className="card-image">
-            <span className="card-emoji" role="img" aria-label="Hospital">🏥</span>
-          </div>
-          <div className="card-content">
-            <h3>Hospital Management System</h3>
-            <p>
-              Developed a comprehensive hospital management system using core Java and OOP principles. Implemented functionality to manage patient records, appointments, and staff details, with modules for inventory control and billing, and integrated SQL for secure, accurate data storage.
-            </p>
-          </div>
-        </div>
-
         <a
           className="work-card six"
           data-aos="fade-right"

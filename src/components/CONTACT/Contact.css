@@ -1,66 +1,283 @@
-/* src/components/Contact.css */
+/* Contact.css - Modern Full Stack Contact Section & Footer */
 
 .contact-section {
-  background-color: #000;
-  color: #fff;
+  position: relative;
+  padding: 100px 24px 40px;
+  background-color: #050811;
+  background-image: radial-gradient(circle at 50% 100%, rgba(0, 233, 176, 0.08) 0%, transparent 50%);
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-lead {
+  max-width: 720px;
+  margin: 16px auto 0;
+  font-size: 1.05rem;
+  color: #94a3b8;
+  line-height: 1.65;
   text-align: center;
-  padding: 80px 20px;
 }
 
-.contact-title {
-  font-size: 3rem;
-  margin-bottom: 40px;
-  font-weight: bold;
-  color: #58ffd5;
+.contact-lead strong {
+  color: #ffffff;
 }
 
-.contact-info {
-  font-size: 1.1rem;
-  line-height: 2;
+/* ================= CONTACT CARDS ================= */
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+  margin: 50px 0 44px;
 }
 
-.contact-info a {
-  color: #00E9B0;
+.contact-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   text-decoration: none;
+  color: inherit;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-.contact-info a:hover {
-  text-decoration: underline;
+.contact-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 233, 176, 0.4);
+  background: rgba(22, 33, 58, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(0, 233, 176, 0.12);
 }
 
-.footer-note {
-  margin-top: 30px;
-  font-size: 0.95rem;
-  color: #888;
+.contact-card.highlight {
+  border-color: rgba(0, 233, 176, 0.28);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(13, 31, 38, 0.7) 100%);
 }
-/* Responsive Enhancements */
+
+.contact-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: rgba(0, 233, 176, 0.1);
+  border: 1px solid rgba(0, 233, 176, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon-box {
+  transform: scale(1.15) rotate(5deg);
+  background: rgba(0, 233, 176, 0.2);
+}
+
+.contact-icon {
+  font-size: 1.6rem;
+  color: #00E9B0;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #64748b;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.contact-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 16px;
+  word-break: break-all;
+}
+
+.contact-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #00E9B0;
+  transition: all 0.25s ease;
+}
+
+.contact-card:hover .contact-action {
+  gap: 10px;
+  color: #25f4bf;
+}
+
+.contact-action-static {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ================= 3 SERVICES BANNER ================= */
+.services-banner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 24px 28px;
+  margin-bottom: 60px;
+  gap: 20px;
+}
+
+.banner-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.service-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.banner-item:hover .service-icon-wrap {
+  transform: scale(1.12);
+}
+
+.shopify-icon-wrap {
+  background: rgba(0, 233, 176, 0.12);
+  border: 1px solid rgba(0, 233, 176, 0.3);
+  color: #00E9B0;
+}
+
+.wp-icon-wrap {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+}
+
+.code-icon-wrap {
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #a855f7;
+}
+
+.banner-icon {
+  font-size: 1.5rem;
+}
+
+.banner-item h4 {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.banner-item p {
+  font-size: 0.83rem;
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+.banner-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ================= FOOTER BOTTOM ================= */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.brand-role {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.copyright-text {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.back-to-top-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.28s ease;
+}
+
+.back-to-top-btn:hover {
+  background: #00E9B0;
+  color: #070b14;
+  border-color: #00E9B0;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 233, 176, 0.4);
+}
+
+@media (max-width: 992px) {
+  .services-banner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .banner-divider {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
-  .contact-title {
-    font-size: 2rem;
-    margin-bottom: 24px;
+  .contact-section {
+    padding: 70px 16px 30px;
   }
-
-  .contact-info {
-    font-size: 1rem;
-    line-height: 1.7;
-    padding: 0 10px;
-  }
-
-  .footer-note {
-    font-size: 0.85rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .contact-title {
-    font-size: 3.5rem;
-  }
-
-  .contact-info {
-    font-size: 1.2rem;
-  }
-
-  .footer-note {
-    font-size: 1rem;
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+    align-items: center;
   }
 }

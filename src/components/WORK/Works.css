@@ -1,180 +1,666 @@
+/* Works.css - Modern Full Stack, Shopify & WordPress Portfolio Grid */
+
 .works-section {
   position: relative;
-  padding: 60px 40px;
-  min-height: 100vh;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  padding: 100px 24px;
+  background-color: #080d1a;
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(0, 233, 176, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.06) 0%, transparent 40%);
+  color: #ffffff;
   overflow: hidden;
-  z-index: 1;
 }
 
-.works-section::before {
+.works-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.works-lead {
+  max-width: 760px;
+  margin: 16px auto 0;
+  font-size: 1.05rem;
+  color: #94a3b8;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.works-lead strong {
+  color: #ffffff;
+}
+
+/* ================= DUAL SPOTLIGHTS (SHOPIFY & WORDPRESS) ================= */
+.spotlights-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 24px;
+  margin: 44px 0 36px;
+}
+
+.shopify-spotlight-banner,
+.wordpress-spotlight-banner {
+  border-radius: 20px;
+  padding: 28px 26px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shopify-spotlight-banner:hover,
+.wordpress-spotlight-banner:hover {
+  transform: translateY(-4px);
+}
+
+.shopify-spotlight-banner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(15, 23, 42, 0.9) 60%, rgba(6, 182, 212, 0.08) 100%);
+  border: 1px solid rgba(0, 233, 176, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 233, 176, 0.08);
+}
+
+.shopify-spotlight-banner::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
-  background-image: url('../../assets/images/work.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(2px);
-  z-index: -1;
-  transform: scale(1.0);
+  height: 2px;
+  background: linear-gradient(90deg, #00E9B0, #38bdf8, transparent);
 }
 
-.works-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  color: #ffffff;
-  margin-bottom: 40px;
-  font-weight: bold;
-  text-align: center;
+.wordpress-spotlight-banner {
+  background: linear-gradient(135deg, rgba(33, 117, 155, 0.18) 0%, rgba(15, 23, 42, 0.9) 60%, rgba(56, 189, 248, 0.1) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 25px rgba(56, 189, 248, 0.08);
 }
 
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+.wordpress-spotlight-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1100px;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, #0284c7, transparent);
 }
 
-/* ========== Card ========== */
-.work-card {
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: #ffffff;
-  color: #000000;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 233, 176, 0.15);
+  color: #00E9B0;
+  border: 1px solid rgba(0, 233, 176, 0.4);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+
+.wp-spotlight-badge {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.shopify-brand-icon {
+  font-size: 1.05rem;
+  color: #95bf47;
+}
+
+.wp-brand-icon {
+  font-size: 1.05rem;
+  color: #38bdf8;
+}
+
+.spotlight-content {
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  width: 100%;
+  gap: 18px;
 }
 
-.work-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+.spotlight-text h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
 }
 
-a.work-card {
-  text-decoration: none;
-  color: inherit;
+.spotlight-text p {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.spotlight-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #00E9B0;
+  color: #070b14;
+  padding: 11px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
+  align-self: flex-start;
+}
+
+.spotlight-btn:hover,
+.spotlight-btn.active {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 233, 176, 0.5);
+  background: #25f4bf;
+}
+
+.wp-spotlight-btn {
+  background: #38bdf8;
+  color: #070b14;
+}
+
+.wp-spotlight-btn:hover,
+.wp-spotlight-btn.active {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+  background: #60a5fa;
+}
+
+/* ================= CONTROLS & SEARCH ================= */
+.works-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
   cursor: pointer;
 }
 
-.card-image {
-  width: 100%;
-  height: auto;
+.filter-tab:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(22, 33, 58, 0.85);
+  transform: translateY(-1px);
+}
+
+.filter-tab.active {
+  background: rgba(0, 233, 176, 0.12);
+  border-color: #00E9B0;
+  color: #00E9B0;
+}
+
+.filter-tab.shopify-tab.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(0, 233, 176, 0.15) 100%);
+  border-color: #00E9B0;
+  color: #00E9B0;
+  box-shadow: 0 0 16px rgba(0, 233, 176, 0.2);
+}
+
+.tab-icon {
+  font-size: 0.95rem;
+}
+
+.tab-count {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+.filter-tab.active .tab-count {
+  background: rgba(0, 233, 176, 0.25);
+  color: #ffffff;
+}
+
+/* Search Bar */
+.search-bar {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #f4f4f4;
+  min-width: 280px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 38px 10px 40px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  margin-bottom: 16px;
-  padding: 20px;
+  color: #f1f5f9;
+  font-size: 0.88rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
 }
 
-.card-image img {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
+.search-bar input:focus {
+  border-color: #00E9B0;
+  box-shadow: 0 0 16px rgba(0, 233, 176, 0.2);
+  background: rgba(22, 33, 58, 0.9);
 }
 
-.card-emoji {
-  font-size: 90px;
+.search-icon {
+  position: absolute;
+  left: 14px;
+  color: #64748b;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.clear-search {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.2rem;
+  cursor: pointer;
   line-height: 1;
 }
 
-.card-content h3 {
-  font-size: 1.15rem;
-  margin: 0 0 10px;
-  color: #111;
+.clear-search:hover {
+  color: #ffffff;
 }
 
-/* Responsive image resizing */
-@media (max-width: 768px) {
-  .card-image img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .card-emoji {
-    font-size: 60px;
-  }
+/* ================= WORKS GRID & CARDS ================= */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 26px;
 }
 
-@media (max-width: 480px) {
-  .card-image img {
-    width: 70px;
-    height: 70px;
-  }
-
-  .card-emoji {
-    font-size: 46px;
-  }
-}
-
-.card-content {
-  flex: 1;
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
+  align-items: center;
+  gap: 16px;
 }
 
-.card-content p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #333;
-  margin: 0;
+.no-results p {
+  color: #94a3b8;
+  font-size: 1.1rem;
 }
 
-/* ======= RESPONSIVE LAYOUT ======= */
+/* Project Card */
+.project-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
 
-/* Tablets */
-@media (max-width: 1024px) {
-  .works-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 20px;
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 233, 176, 0.1);
+  background: rgba(20, 30, 52, 0.92);
+}
+
+.project-card.shopify {
+  border-left: 3px solid rgba(0, 233, 176, 0.7);
+}
+
+.project-card.shopify:hover {
+  border-color: rgba(0, 233, 176, 0.4);
+}
+
+.project-card.wordpress {
+  border-left: 3px solid rgba(56, 189, 248, 0.7);
+}
+
+.project-card.wordpress:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.1);
+}
+
+.project-card.fullstack {
+  border-left: 3px solid rgba(168, 85, 247, 0.7);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 3px 9px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #cbd5e1;
+}
+
+.pill-brand-icon {
+  font-size: 0.85rem;
+  color: #00E9B0;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  color: #10b981;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 6px #10b981;
+  animation: pulseLiveDot 2.2s infinite ease-in-out;
+}
+
+@keyframes pulseLiveDot {
+  0%, 100% {
+    box-shadow: 0 0 4px #10b981;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 10px #10b981, 0 0 16px rgba(16, 185, 129, 0.6);
+    transform: scale(1.2);
   }
 }
 
-/* Mobile */
+.card-link-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.card-link-btn:hover {
+  background: #00E9B0;
+  color: #070b14;
+  border-color: #00E9B0;
+  transform: translate(2px, -2px);
+  box-shadow: 0 0 12px rgba(0, 233, 176, 0.4);
+}
+
+/* Brand Banner */
+.card-brand-banner {
+  width: 100%;
+  height: 96px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 18px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card-brand-banner::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-brand-banner::after {
+  transform: scale(1.3) translateX(-10px);
+}
+
+.brand-monogram {
+  width: 52px;
+  height: 52px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .brand-monogram {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.brand-domain-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: transform 0.25s ease;
+}
+
+.project-card:hover .brand-domain-chip {
+  transform: translateX(-2px);
+}
+
+.domain-icon {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* Card Body */
+.card-body {
+  flex-grow: 1;
+  margin-bottom: 18px;
+}
+
+.project-niche {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #00E9B0;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.project-card.wordpress .project-niche {
+  color: #38bdf8;
+}
+
+.project-title {
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+
+.project-summary {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+/* Card Footer */
+.card-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tech-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag-chip {
+  font-size: 0.73rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.tech-tag-chip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.live-visit-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0, 233, 176, 0.08);
+  border: 1px solid rgba(0, 233, 176, 0.3);
+  color: #00E9B0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.28s ease;
+  text-decoration: none;
+}
+
+.live-visit-action:hover {
+  background: #00E9B0;
+  color: #070b14;
+  box-shadow: 0 4px 16px rgba(0, 233, 176, 0.35);
+  transform: translateY(-1px);
+}
+
+.project-card.wordpress .live-visit-action {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+}
+
+.project-card.wordpress .live-visit-action:hover {
+  background: #38bdf8;
+  color: #070b14;
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.35);
+}
+
+.live-visit-action.disabled {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #64748b;
+  cursor: default;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .spotlights-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .works-section {
-    padding: 40px 16px;
+    padding: 70px 16px;
   }
-
+  .works-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-bar {
+    min-width: 100%;
+  }
   .works-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .works-title {
-    font-size: 2.3rem;
-  }
-
-  .work-card {
-    padding: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .works-section {
-    padding: 30px 12px;
-  }
-
-  .card-content p {
-    font-size: 0.9rem;
-  }
-
-  .works-title {
-    font-size: 2rem;
   }
 }

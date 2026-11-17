@@ -1,159 +1,327 @@
+/* About.css - Modern Full Stack, Shopify & WordPress About Section */
+
 .about-section {
   position: relative;
-  padding: 80px 60px;
-  color: white;
-  min-height: 100vh;
-  animation: fadeInUp 0.8s ease-out;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  z-index: 1;
+  padding: 100px 24px;
+  background-color: #090e1a;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 233, 176, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.06) 0%, transparent 40%);
+  color: #ffffff;
   overflow: hidden;
 }
 
-/* Pseudo-element for blurred background */
-.about-section::before {
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-subtitle {
+  display: inline-block;
+  color: #00E9B0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+}
+
+.section-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #00E9B0, #38bdf8);
+  margin: 0 auto;
+  border-radius: 2px;
+  animation: lineGlow 3s infinite alternate;
+}
+
+@keyframes lineGlow {
+  0% { box-shadow: 0 0 6px rgba(0, 233, 176, 0.3); }
+  100% { box-shadow: 0 0 16px rgba(0, 233, 176, 0.8); }
+}
+
+/* About Intro */
+.about-intro {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-intro p {
+  font-size: 1.06rem;
+  line-height: 1.8;
+  color: #94a3b8;
+}
+
+.about-intro .lead-paragraph {
+  font-size: 1.18rem;
+  color: #f1f5f9;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.about-intro strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 4 Pillars Grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.pillar-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px 24px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-card::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('../../assets/images/about.jpg') no-repeat center center;
-  background-size: cover;
-  filter: blur(3px);
-  z-index: -1;
-  transform: scale(1.05);
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
 }
 
-.about-section h2 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  color: #ffffff;
-  text-align: center;
+.pillar-card:hover {
+  transform: translateY(-8px);
+  background: rgba(22, 33, 58, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
-.about-section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-align: justify;
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
+.pillar-card.card-shopify:hover::before {
+  background: linear-gradient(90deg, #00E9B0, #10b981);
 }
 
-.tech-images {
+.pillar-card.card-wordpress:hover::before {
+  background: linear-gradient(90deg, #38bdf8, #0284c7);
+}
+
+.pillar-card.card-fullstack:hover::before {
+  background: linear-gradient(90deg, #a855f7, #6366f1);
+}
+
+.pillar-card.card-design:hover::before {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+}
+
+.pillar-card.highlight {
+  border-color: rgba(0, 233, 176, 0.35);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(13, 31, 38, 0.6) 100%);
+}
+
+.pillar-card.highlight-wp {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(12, 28, 48, 0.6) 100%);
+}
+
+.pillar-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: rgba(0, 233, 176, 0.15);
+  color: #00E9B0;
+  border: 1px solid rgba(0, 233, 176, 0.3);
+}
+
+.pillar-badge.wp-badge {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.pillar-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 40px;
-  margin-top: 50px;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.pillar-card:hover .pillar-icon-box {
+  transform: scale(1.1) rotate(4deg);
+}
+
+.icon-fullstack {
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #a855f7;
+}
+
+.icon-shopify {
+  background: rgba(0, 233, 176, 0.12);
+  border: 1px solid rgba(0, 233, 176, 0.3);
+  color: #00E9B0;
+}
+
+.icon-wordpress {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+}
+
+.icon-design {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+}
+
+.pillar-icon {
+  font-size: 1.55rem;
+}
+
+.pillar-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+
+.pillar-card p {
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.pillar-tags {
+  display: flex;
   flex-wrap: wrap;
+  gap: 6px;
 }
 
-.tech-images img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: white;
-  padding: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  object-fit: contain;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.pillar-tags span {
+  font-size: 0.73rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #cbd5e1;
 }
 
-.tech-images img:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
-}
-
-.tech-badge {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: white;
-  color: #020618;
+/* Tech Strip */
+.tech-strip-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 16px;
+}
+
+.tech-strip-label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.tech-strip {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  gap: 12px;
 }
 
-.tech-badge svg {
-  width: 36px;
-  height: 36px;
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  transition: all 0.28s ease;
+  cursor: default;
 }
 
-.tech-badge:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
+.tech-pill.animated-pill:hover {
+  background: rgba(22, 33, 58, 0.95);
+  border-color: rgba(0, 233, 176, 0.4);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* ✅ RESPONSIVENESS: Mobile & Tablets */
-@media (max-width: 992px) {
-  .about-section {
-    padding: 60px 30px;
-  }
-
-  .about-section h2 {
-    font-size: 2.8rem;
-  }
-
-  .about-section p {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .tech-images {
-    gap: 30px;
-  }
-
-  .tech-images img {
-    width: 70px;
-    height: 70px;
-  }
+.tech-pill.shopify-glow:hover {
+  border-color: #00E9B0;
+  box-shadow: 0 0 20px rgba(0, 233, 176, 0.3);
 }
+
+.tech-pill.wp-glow:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.tech-pill-icon {
+  font-size: 1.15rem;
+}
+
+.react-color { color: #61dafb; }
+.shopify-color { color: #95bf47; }
+.wp-color { color: #38bdf8; }
+.node-color { color: #22c55e; }
+.mysql-color { color: #00758f; }
+.tailwind-color { color: #38bdf8; }
+.figma-color { color: #f24e1e; }
+.git-color { color: #f05032; }
 
 @media (max-width: 768px) {
   .about-section {
-    padding: 40px 20px;
+    padding: 70px 16px;
   }
-
-  .about-section h2 {
-    font-size: 2.2rem;
+  .pillars-grid {
+    grid-template-columns: 1fr;
   }
-
-  .about-section p {
-    font-size: 0.95rem;
-  }
-
-  .tech-images {
-    gap: 20px;
-  }
-
-  .tech-images img {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-section {
-    padding: 30px 15px;
-  }
-
-  .about-section h2 {
-    font-size: 1.8rem;
-  }
-
-  .about-section p {
-    font-size: 0.9rem;
-  }
-
-  .tech-images img {
-    width: 50px;
-    height: 50px;
+  .about-intro p {
+    text-align: left;
   }
 }

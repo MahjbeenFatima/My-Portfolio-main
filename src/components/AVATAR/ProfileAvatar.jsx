@@ -4,8 +4,15 @@ import profileImage from "/src/assets/images/avatar-female.png";
 
 const ProfileAvatar = () => {
   return (
-    <div className="avatar-container">
-      <img src={profileImage} alt="Profile" className="avatar-image" />
+    <div className="avatar-wrapper">
+      <div className="avatar-glow"></div>
+      <div className="avatar-container">
+        <img src={profileImage} alt="Mahjbeen Fatima" className="avatar-image" />
+      </div>
+      <div className="avatar-status-pill">
+        <span className="status-dot"></span>
+        <span className="status-text">Available for Work</span>
+      </div>
     </div>
   );
 };
